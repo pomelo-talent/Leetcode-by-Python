@@ -1,0 +1,23 @@
+Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+
+You can return the answer in any order.
+
+来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/two-sum
+
+HashTable can speed up.
+
+class Solution(object):
+    def twoSum(self, nums, target):
+         hashtable = dict()
+         for i, num in enumerate(nums):
+             if target-num in hashtable: 
+                 return [hashtable[target - num], i]
+             hashtable[nums[i]] = i
+             # or hashtable[num] = i
+         return []
+
+Timing: 16ms
+Memory consumption: 13.1MB
